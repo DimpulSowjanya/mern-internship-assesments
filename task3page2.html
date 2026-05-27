@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Training Institute - Courses</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { 
+            background: linear-gradient(rgba(24, 42, 68, 0.85), rgba(18, 31, 51, 0.95)), url('https://unsplash.com') no-repeat center center;
+            background-size: cover;
+            color: #ffffff; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .navbar { background-color: #0a111a; display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; border-bottom: 1px solid #142235; }
+        .logo { font-size: 1.25rem; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+        .logo::before { content: "📋"; }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { color: #9bb0c9; text-decoration: none; font-size: 0.9rem; padding: 5px 10px; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+        .container { flex: 1; padding: 60px 40px; max-width: 900px; margin: 0 auto; width: 100%; }
+        h1 { font-size: 2.2rem; font-weight: 500; text-align: center; margin-bottom: 45px; letter-spacing: 0.5px; }
+        
+        .courses-layout { display: flex; justify-content: space-between; gap: 50px; background: rgba(10, 18, 30, 0.7); padding: 35px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05); }
+        .course-block { width: 50%; }
+        
+        .course-block h2 { font-size: 1.15rem; font-weight: normal; margin-bottom: 15px; color: #ffffff; display: flex; align-items: center; gap: 8px; }
+        
+        .course-block ul, .course-block ol { padding-left: 35px; }
+        .course-block li { color: #cbd6e2; font-size: 1rem; margin-bottom: 10px; line-height: 1.4; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ABC Training Institute</div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html" class="active">Courses</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Our Courses</h1>
+        
+        <div class="courses-layout">
+            <div class="course-block">
+                <h2>• Web Development:</h2>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>React JS</li>
+                </ul>
+            </div>
+
+            <div class="course-block">
+                <h2>• Programming Languages:</h2>
+                <ol>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C++</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

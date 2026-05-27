@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Training Institute - Home</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #0b131f; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Navigation Bar */
+        .navbar { background-color: #0a111a; display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; border-bottom: 1px solid #142235; }
+        .logo { font-size: 1.25rem; font-weight: bold; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px; }
+        .logo::before { content: "📋"; font-size: 1.1rem; }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { color: #9bb0c9; text-decoration: none; font-size: 0.9rem; padding: 5px 10px; transition: 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+        /* Main Section Background Wrapper using dynamic architectural banner */
+        .main-container {
+            flex: 1;
+            background: linear-gradient(rgba(14, 27, 44, 0.8), rgba(14, 27, 44, 0.8)), url('https://unsplash.com') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.2rem; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .subtitle { color: #8ba2bd; font-size: 0.95rem; margin-bottom: 35px; }
+
+        /* Video Container Panel Layout */
+        .video-panel {
+            background-color: rgba(13, 22, 37, 0.85);
+            border: 2px solid #576d85;
+            border-radius: 4px;
+            width: 440px;
+            max-width: 100%;
+            padding: 25px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Displays laptop programming image simulating media interface overlay */
+        .video-screen {
+            background: url('https://unsplash.com') no-repeat center center;
+            background-size: cover;
+            height: 180px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            margin-bottom: 18px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-overlay-text { 
+            font-size: 1.9rem; 
+            font-weight: bold; 
+            letter-spacing: 1.5px; 
+            color: #ffffff; 
+            background: rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        .controls-bar {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            color: #ccc;
+        }
+        .play-btn { width: 0; height: 0; border-top: 5px solid transparent; border-left: 8px solid white; border-bottom: 5px solid transparent; margin-right: 10px; }
+        .progress-line { flex: 1; height: 3px; background: rgba(255,255,255,0.3); margin: 0 10px; position: relative; }
+        .progress-line::after { content: ''; position: absolute; left: 0; top: 0; width: 45%; height: 100%; background: #ffffff; }
+
+        audio { width: 100%; height: 32px; outline: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ABC Training Institute</div>
+        <ul class="nav-links">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <h1>Welcome to ABC Training Institute</h1>
+        <p class="subtitle">Empowering Your Future with Quality Education</p>
+        
+        <div class="video-panel">
+            <div class="video-screen">
+                <div class="video-overlay-text">LEARN TO CODE</div>
+                <div class="controls-bar">
+                    <div class="play-btn"></div>
+                    <div class="progress-line"></div>
+                    <span>🔊 &nbsp; ⚙ &nbsp; ⛶</span>
+                </div>
+            </div>
+            
+            <audio controls>
+                <source src="https://soundhelix.com" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+</body>
+</html>
