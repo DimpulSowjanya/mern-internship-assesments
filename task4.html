@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            row-gap: 20px;
+            column-gap: 20px;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        div {
+            border: 1px solid black;
+            padding: 15px;
+            background-color: burlywood;
+            border-radius: 10px;
+            text-align: center;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1. Select the body element to append cards later
+        let body = document.querySelector("body");
+
+        // 2. Fetch data from the dummyjson users endpoint
+        window.fetch('https://dummyjson.com/users')
+            .then((response) => response.json())
+            .then((data) => {
+                // 3. Extract the users array from the response data object
+                let ALLUsers = data.users;
+                console.log(ALLUsers);
+
+                // 4. Loop through each user to build cards dynamically
+                ALLUsers.forEach((user) => {
+                    // Create elements
+                    let card = document.createElement('div');
+                    let image = document.createElement('img');
+                    let cardTitle = document.createElement('h4');
+                    let cardText = document.createElement("p");
+                    let profileBtn = document.createElement('button');
+
+                    // Set text and values using user object keys
+                    profileBtn.innerText = 'View Profile';
+                    image.src = user.image; // User avatar URL
+                    cardTitle.innerText = `Name: ${user.firstName} ${user.lastName}`;
+                    cardText.innerText = `Email: ${user.email}`;
+
+                    // Append elements to the card
+                    card.appendChild(image);
+                    card.appendChild(cardTitle);
+                    card.appendChild(cardText);
+                    card.appendChild(profileBtn);
+
+                    // Append the card to the document body
+                    body.appendChild(card);
+                });
+            })
+            .catch((err) => {
+                // Handle API errors gracefully
+                console.error(err);
+            });
+    </script>
+</body>
+
+</html>
